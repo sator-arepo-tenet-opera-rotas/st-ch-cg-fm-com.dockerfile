@@ -1,1 +1,1 @@
-# strapon-chastity-cage-femdom-compilation.dockerfile
+generic.dockerfile
