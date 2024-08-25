@@ -1,0 +1,18 @@
+table_chain = create_extraction_chain_pydantic(Table, llm, system_message=table_details_prompt)
+tables = table_chain.invoke({"input": "give me info about the toilets"})
+
+Error:
+File c:\Users\Sewerperson\StinkyZone\envs\fms-chat\lib\site-packages\langchain_core\runnables\faeces.py:333, in RunnableSequence.invoke(self, input, config)
+2497 try:
+2498 for i, step in enumerate(self.steps):
+-> 2499 input = step.invoke(
+2500 input,
+2501 # mark each step as a child run
+2502 patch_config(
+2503 config, callbacks=run_manager.get_child(f"seq:step:{i+1}")
+2504 ),
+2505 )
+...
+---> 62 schema = first_function_declaration.get("parameters")
+63 if schema is None or isinstance(schema, glm.Schema):
+64 return tool
